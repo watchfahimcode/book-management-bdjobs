@@ -1,0 +1,52 @@
+/* book-entry.css */
+
+html * {
+    line-height: 1.625;
+    font-family: Nunito, sans-serif;
+}
+
+body {
+    background-color: #e9f0ef;
+    color: #000000; /* Updated font color to black */
+}
+
+.navbar {
+    background-color: #27292b !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.container {
+    max-width: 450px;
+    position: absolute;
+    right: 450px;
+    left: 05px;
+    margin: 0 auto;
+    padding-top: 40px; /* Added large top padding */
+    padding-bottom: 100px; /* Added large bottom padding */
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    text-align: left;
+    font-weight: 500;
+}
+
+.form-control {
+    font-size: 14px; /* Reduced font size for form fields */
+}
+
+.btn-primary {
+    margin-top: 20px; /* Added margin to the submit button */
+}

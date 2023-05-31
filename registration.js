@@ -52,8 +52,6 @@ $(document).ready(function() {
       link.click();
   
       alert('Registration successful!'); // Display a success message
-      window.location.href = 'login.html';
-
       $('form')[0].reset(); // Reset the form
     });
   });

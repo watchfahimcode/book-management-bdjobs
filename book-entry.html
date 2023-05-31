@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="book-entry.css">
+    <title>Book Entry</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">Book Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="book-entry.html">Book Entry</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="book-list.html">Book List</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="mt-4">Book Entry</h1>
+        <form id="bookEntryForm">
+            <div class="form-group">
+                <label for="bookTitle">Book Title</label>
+                <input type="text" class="form-control" id="bookTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="authorName">Author Name</label>
+                <input type="text" class="form-control" id="authorName" required>
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre</label>
+                <input type="text" class="form-control" id="genre" required>
+            </div>
+            <div class="form-group">
+                <label for="publicationYear">Publication Year</label>
+                <input type="date" class="form-control" id="publicationYear" required>
+            </div>
+            <div class="form-group">
+                <label for="totalPage">Total Page</label>
+                <input type="number" class="form-control" id="totalPage" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" required>
+                    <option value="">Select Status</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Finished">Finished</option>
+                    <option value="Want to Read">Want to Read</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Rating</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rating" id="rating1" value="Very Good" required>
+                        <label class="form-check-label" for="rating1">Very Good</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rating" id="rating2" value="Good" required>
+                        <label class="form-check-label" for="rating2">Good</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rating" id="rating3" value="Average" required>
+                        <label class="form-check-label" for="rating3">Average</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rating" id="rating4" value="Bad" required>
+                        <label class="form-check-label" for="rating4">Bad</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rating" id="rating5" value="Very Bad" required>
+                        <label class="form-check-label" for="rating5">Very Bad</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rating" id="rating6" value="Unfinished" required>
+                        <label class="form-check-label" for="rating6">Unfinished</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="book-entry.js"></script>
+</body>
+</html>
