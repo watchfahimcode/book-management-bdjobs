@@ -1,0 +1,38 @@
+html * {
+    font-size: 16px;
+    line-height: 1.625;
+    font-family: Nunito, sans-serif;
+  }
+
+body {
+    background-color: #d4eceb;
+    color: #ffffff;
+  }
+  
+  .navbar {
+      background-color: #27292b !important
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+  }
+  
+  .jumbotron {
+    background-color: #a6c8bbfa;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .jumbotron h1 {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .container {
+    max-width: 800px;
+  }
+  
