@@ -62,4 +62,6 @@ html * {
   display: block;
   margin-bottom: 20px;
 }
-  
+.book-checkbox {
+  margin-right: 10px;
+}
