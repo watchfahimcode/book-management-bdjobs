@@ -1,0 +1,58 @@
+/* update-book.css */
+
+html * {
+    
+    line-height: 1.625;
+    font-family: Nunito, sans-serif;
+}
+
+body {
+    background-color: #e9f0ef;
+    color: #000000; /* Black */
+}
+
+.navbar {
+    background-color: #27292b !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.container {
+    max-width: 400px;
+    position: absolute;
+    right: 450px;
+    left: 05px;
+}
+
+/* Custom styling for update book form */
+.form-group label {
+    color: #000000; /* Black */
+}
+
+.form-control {
+    font-size: 14px;
+    text-align: left;
+}
+
+.container.form-container {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.form-container form {
+    margin-left: 0;
+}
+
+.form-container .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-container .btn-primary {
+    margin-top: 1.5rem;
+}

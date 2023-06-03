@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="update-book.css">
+    <title>Update Book</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">Book Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="book-entry.html">Book Entry</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="book-list.html">Book List</a>
+                </li>
+            </ul>
+        </div>
+        
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Log In</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="container mt-4 form-container">
+        <h1 class="display-4">Update Book</h1>
+        <form>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter the book title">
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" class="form-control" id="author" placeholder="Enter the book author">
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre:</label>
+                <input type="text" class="form-control" id="genre" placeholder="Enter the book genre">
+            </div>
+            <div class="form-group">
+                <label for="publicationYear">Publication Year:</label>
+                <input type="date" class="form-control" id="publicationYear" placeholder="Enter the publication year">
+            </div>
+            <div class="form-group">
+                <label for="totalPages">Total Pages:</label>
+                <input type="number" class="form-control" id="totalPages" placeholder="Enter the total number of pages">
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select class="form-control" id="status">
+                    <option value="unread">Unread</option>
+                    <option value="reading">Reading</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <select class="form-control" id="rating">
+                    <option value="very-good">Very Good</option>
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                    <option value="bad">Bad</option>
+                    <option value="very-bad">Very Bad</option>
+                    <option value="unfinished">Unfinished</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="update-book.js"></script>
+</body>
+</html>

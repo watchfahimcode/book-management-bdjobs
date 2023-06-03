@@ -30,13 +30,30 @@ $(document).ready(function() {
 
             // Add event listeners to the buttons
             updateButton.click(function() {
-                // Handle update functionality
-                alert('Update button clicked for book with ID: ' + book.id);
+                // Redirect to update-book.html and pass the book ID as a parameter
+                window.location.href = 'update-book.html?id=' + book.id;
             });
 
             deleteButton.click(function() {
-                // Handle delete functionality
-                alert('Delete button clicked for book with ID: ' + book.id);
+                // Confirm deletion with the user
+                var confirmation = confirm('Are you sure you want to delete this book?');
+                if (confirmation) {
+                    // Find the index of the book in the array
+                    var index = books.findIndex(function(item) {
+                        return item.id === book.id;
+                    });
+            
+                    if (index !== -1) {
+                        // Remove the book from the array
+                        books.splice(index, 1);
+                        
+                        // Update the local storage
+                        localStorage.setItem('books', JSON.stringify(books));
+                        
+                        // Re-display the book list
+                        displayBookList(books);
+                    }
+                }
             });
 
             // Append buttons to the actions cell
@@ -58,4 +75,24 @@ $(document).ready(function() {
             tableBody.append(row);
         });
     }
+
+    $('#searchButton').click(function() {
+        var searchTitle = $('#searchTitleInput').val().toLowerCase();
+        var searchAuthor = $('#searchAuthorInput').val().toLowerCase();
+        var searchGenre = $('#searchGenreInput').val().toLowerCase();
+        var searchStatus = $('#searchStatusInput').val().toLowerCase();
+        var searchRating = $('#searchRatingInput').val().toLowerCase();
+
+        var filteredBooks = books.filter(function(book) {
+            var titleMatch = book.title.toLowerCase().includes(searchTitle);
+            var authorMatch = book.author.toLowerCase().includes(searchAuthor);
+            var genreMatch = book.genre.toLowerCase().includes(searchGenre);
+            var statusMatch = book.status.toLowerCase().includes(searchStatus);
+            var ratingMatch = book.rating.toLowerCase().includes(searchRating);
+
+            return titleMatch && authorMatch && genreMatch && statusMatch && ratingMatch;
+        });
+
+        displayBookList(filteredBooks);
+    });
 });

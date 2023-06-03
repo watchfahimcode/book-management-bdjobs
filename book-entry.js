@@ -40,6 +40,7 @@ $(document).ready(function() {
 
     alert('Book entry saved successfully!'); // Display a success message
     $('#bookEntryForm')[0].reset(); // Reset the form
+    window.location.href = "book-list.html";
   });
 
   // Function to generate a unique ID for a book
