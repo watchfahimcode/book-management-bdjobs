@@ -47,6 +47,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Title</th>
                     <th>Author</th>
                     <th>Genre</th>
@@ -59,6 +60,19 @@
             </thead>
             <tbody id="bookListTable"></tbody>
         </table>
+
+        <nav aria-label="Book List Pagination">
+            <ul class="pagination justify-content-center" id="pagination-container">
+              <li class="page-item" id="previous-page">
+                <a class="page-link" href="#" tabindex="-1">Prev</a>
+              </li>
+              <!-- Dynamically generated page links will be added here -->
+              <li class="page-item" id="next-page">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+          
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
