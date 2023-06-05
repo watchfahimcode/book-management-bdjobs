@@ -125,86 +125,65 @@ $(document).ready(function () {
     generatePaginationLinks(books.length, currentPage);
   }
 
-  // Function to generate pagination links
-  function generatePaginationLinks(totalRows, currentPage) {
-    var totalPages = Math.ceil(totalRows / pageSize);
-    var paginationContainer = $('#paginationContainer');
-    paginationContainer.empty(); // Clear the pagination container
-  
-    var paginationHTML = '<div class="pagination-link">';
-  
-    // Add the first page link
-    paginationHTML += '<a href="#" data-page="1">1</a>';
-  
-    var startPage, endPage;
-  
-    if (totalPages <= 6) {
-      // If there are 6 or fewer pages, display all page links except the first and last
-      startPage = 2;
-      endPage = totalPages - 1;
-    } else {
-      // Otherwise, display a subset of page links based on the current page
-      if (currentPage <= 3) {
-        startPage = 2;
-        endPage = 4;
-      } else if (currentPage >= totalPages - 2) {
-        startPage = totalPages - 3;
-        endPage = totalPages - 1;
-      } else {
-        startPage = currentPage - 1;
-        endPage = currentPage + 1;
-      }
-  
-      // Add the dots before the first or last page link
-      if (currentPage <= 3) {
-        paginationHTML += '<span>...</span>';
-      } else if (currentPage >= totalPages - 2) {
-        paginationHTML += '<span>...</span>';
-      } else {
-        paginationHTML += '<span>...</span>';
-        paginationHTML += '<a href="#" data-page="' + (totalPages - 1) + '">' + (totalPages - 1) + '</a>';
-      }
-    }
-  
-    // Add the page number links
-    for (var i = startPage; i <= endPage; i++) {
-      if (i === currentPage) {
-        paginationHTML += '<span class="pagination-link active">' + i + '</span>';
-      } else {
-        paginationHTML += '<a href="#" data-page="' + i + '">' + i + '</a>';
-      }
-    }
-  
-    // Add the dots after the first or last page link
-    if (currentPage <= 3) {
-      paginationHTML += '<a href="#" data-page="' + totalPages + '">' + totalPages + '</a>';
-      paginationHTML += '<span>...</span>';
-    } else if (currentPage >= totalPages - 2) {
-      paginationHTML += '<span>...</span>';
-      paginationHTML += '<a href="#" data-page="2">2</a>';
-    } else {
+// Function to generate pagination links
+function generatePaginationLinks(totalRows, currentPage) {
+  var totalPages = Math.ceil(totalRows / pageSize);
+  var paginationContainer = $('#paginationContainer');
+  paginationContainer.empty(); // Clear the pagination container
+
+  var paginationHTML = '<div class="pagination-link">';
+
+  if (currentPage > 1) {
+    // Add "First Page" link
+    paginationHTML += '<a href="#" data-page="1">First Page</a>';
+
+    if (currentPage > 3) {
       paginationHTML += '<span>...</span>';
     }
-  
-    // Add the last page link
-    paginationHTML += '<a href="#" data-page="' + totalPages + '">' + totalPages + '</a>';
-  
-    paginationHTML += '</div>';
-    paginationContainer.html(paginationHTML);
-  
-    // Add event listeners to the pagination links
-    paginationContainer.find('a').click(function (event) {
-      event.preventDefault();
-      var page = parseInt($(this).data('page'));
-      displayBookList(books, page);
-    });
   }
+
+  // Add the page number links
+  var startPage = Math.max(1, currentPage - 2);
+  var endPage = Math.min(totalPages, currentPage + 2);
+
+  for (var i = startPage; i <= endPage; i++) {
+    if (i === currentPage) {
+      paginationHTML += '<span class="pagination-link active">' + i + '</span>';
+    } else {
+      paginationHTML += '<a href="#" data-page="' + i + '">' + i + '</a>';
+    }
+  }
+
+  if (currentPage < totalPages) {
+    if (currentPage < totalPages - 2) {
+      paginationHTML += '<span>...</span>';
+    }
+
+    // Add "Last Page" link
+    paginationHTML += '<a href="#" data-page="' + totalPages + '">Last Page</a>';
+  }
+
+  paginationHTML += '</div>';
+  paginationContainer.html(paginationHTML);
+
+  // Add event listeners to the pagination links
+  paginationContainer.find('a').click(function (event) {
+    event.preventDefault();
+    var page = parseInt($(this).data('page'));
+    displayBookList(books, page);
+  });
+}
+
+
+
 
   // Function to get the current page number from the active page link
   function getCurrentPageNumber() {
     var currentPageLink = $('#paginationContainer .active');
     return parseInt(currentPageLink.text());
   }
+
+  displayBookList(books, 1);
 
   $('#searchButton').click(function () {
     var searchTitle = $('#searchTitleInput').val().toLowerCase();
